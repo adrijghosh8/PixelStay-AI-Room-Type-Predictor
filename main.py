@@ -8,9 +8,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_origins=["https://pixelstay-ai-room-type-predictor-frontend.onrender.com"]
 )
 COLUMNS = ["latitude", "longitude", "price", "minimum_nights",
     "number_of_reviews", "reviews_per_month",
