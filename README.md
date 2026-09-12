@@ -503,5 +503,3 @@ Computer Science Student | AI/ML | Python | SQL | Machine Learning | DSA | Backe
 ## 📄 License
 
 This project is intended for educational and portfolio purposes.
-#   P i x e l S t a y - A I - R o o m - T y p e - P r e d i c t o r  
- 
