@@ -1,0 +1,36 @@
+.error-panel {
+  background: rgba(124, 55, 32, 0.18);
+  border-color: var(--brick) !important;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.error-panel__title {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--danger);
+}
+
+.error-panel__body {
+  margin: 0;
+  color: var(--cream-dim);
+  font-size: 0.9rem;
+}
+
+.error-panel__retry {
+  align-self: flex-start;
+  background: transparent;
+  border: 2px solid var(--danger);
+  color: var(--cream);
+  padding: 9px 16px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+.error-panel__retry:hover {
+  background: rgba(255, 107, 107, 0.12);
+}

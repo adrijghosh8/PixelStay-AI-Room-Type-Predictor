@@ -1,0 +1,108 @@
+:root {
+  /* Color system — derived from the reference night-skyline art:
+     deep navy sky, muted cyan glass towers, brick rooftops, warm window light. */
+  --night-deep: #070b16;
+  --night-mid: #101a30;
+  --night-high: #1c2b48;
+  --brick: #c1502e;
+  --brick-dark: #7c3720;
+  --window-warm: #ffc65c;
+  --cyan-glow: #5fd4d0;
+  --cream: #eef1ee;
+  --cream-dim: #aab4c4;
+  --danger: #ff6b6b;
+
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-body: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+
+  --radius-panel: 4px;
+  --border-pixel: 3px solid var(--night-high);
+
+  --shadow-panel: 0 0 0 2px var(--night-deep), 6px 6px 0 0 rgba(0, 0, 0, 0.45);
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--night-deep);
+  color: var(--cream);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  color: var(--cyan-glow);
+}
+
+::selection {
+  background: var(--cyan-glow);
+  color: var(--night-deep);
+}
+
+/* visible focus states everywhere */
+:focus-visible {
+  outline: 3px solid var(--cyan-glow);
+  outline-offset: 2px;
+}
+
+.pixel-heading {
+  font-family: var(--font-pixel);
+  letter-spacing: 0.02em;
+  line-height: 1.7;
+}
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.pixel-border {
+  border: var(--border-pixel);
+  box-shadow: var(--shadow-panel);
+  image-rendering: pixelated;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

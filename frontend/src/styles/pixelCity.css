@@ -1,0 +1,179 @@
+.pc-root {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--night-deep);
+  --parallax-x: 0;
+  --parallax-y: 0;
+}
+
+.pc-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.pc-sky {
+  background: linear-gradient(
+    to bottom,
+    #050810 0%,
+    #0a1226 32%,
+    #101c38 58%,
+    #16233f 78%,
+    #1a2846 100%
+  );
+}
+
+.pc-stars {
+  opacity: 0.9;
+}
+
+.pc-twinkle {
+  animation: pc-twinkle 3.4s ease-in-out infinite;
+}
+
+@keyframes pc-twinkle {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 1; }
+}
+
+.pc-clouds {
+  overflow: hidden;
+}
+
+.pc-cloud {
+  position: absolute;
+  border-radius: 999px;
+  background: rgba(140, 170, 190, 0.14);
+  filter: blur(2px);
+}
+
+.pc-cloud--1 {
+  width: 220px;
+  height: 46px;
+  top: 8%;
+  left: -10%;
+  animation: pc-drift 70s linear infinite;
+}
+
+.pc-cloud--2 {
+  width: 160px;
+  height: 34px;
+  top: 16%;
+  left: -30%;
+  animation: pc-drift 95s linear infinite;
+  animation-delay: -20s;
+}
+
+.pc-cloud--3 {
+  width: 260px;
+  height: 50px;
+  top: 4%;
+  left: -50%;
+  animation: pc-drift 120s linear infinite;
+  animation-delay: -50s;
+}
+
+@keyframes pc-drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(160vw); }
+}
+
+.pc-far {
+  transform: translate3d(calc(var(--parallax-x) * 6px), calc(var(--parallax-y) * 3px), 0);
+  transition: transform 0.2s ease-out;
+}
+
+.pc-mid {
+  transform: translate3d(calc(var(--parallax-x) * 14px), calc(var(--parallax-y) * 6px), 0);
+  transition: transform 0.2s ease-out;
+}
+
+.pc-window {
+  opacity: 0.15;
+}
+
+.pc-window--warm {
+  fill: var(--window-warm);
+  animation: pc-window-glow 6s ease-in-out infinite;
+}
+
+.pc-window--cyan {
+  fill: var(--cyan-glow);
+  animation: pc-window-glow 7s ease-in-out infinite;
+}
+
+@keyframes pc-window-glow {
+  0%, 40% { opacity: 0.12; }
+  50% { opacity: 0.85; }
+  65%, 100% { opacity: 0.12; }
+}
+
+.pc-water {
+  top: auto;
+  bottom: 0;
+  height: 16%;
+  background: linear-gradient(to bottom, #0d1830 0%, #060b18 100%);
+  overflow: hidden;
+}
+
+.pc-water__shimmer {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    100deg,
+    transparent 0,
+    transparent 40px,
+    rgba(95, 212, 208, 0.05) 42px,
+    transparent 46px
+  );
+  animation: pc-shimmer 5s linear infinite;
+}
+
+@keyframes pc-shimmer {
+  from { background-position-x: 0; }
+  to { background-position-x: 300px; }
+}
+
+.pc-boat {
+  position: absolute;
+  bottom: 10%;
+  width: 48px;
+  left: -10%;
+  animation: pc-boat-sail 38s linear infinite;
+  image-rendering: pixelated;
+}
+
+@keyframes pc-boat-sail {
+  from { transform: translateX(0); }
+  to { transform: translateX(130vw); }
+}
+
+.pc-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 30%, transparent 40%, rgba(5, 7, 14, 0.55) 100%);
+  pointer-events: none;
+}
+
+.pc-content {
+  position: relative;
+  z-index: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pc-cloud,
+  .pc-boat,
+  .pc-water__shimmer,
+  .pc-twinkle,
+  .pc-window--warm,
+  .pc-window--cyan {
+    animation: none !important;
+  }
+  .pc-far,
+  .pc-mid {
+    transform: none !important;
+  }
+}

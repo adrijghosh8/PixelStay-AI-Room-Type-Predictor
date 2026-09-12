@@ -1,0 +1,87 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field__label {
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+}
+
+.field__unit {
+  text-transform: none;
+  color: var(--cyan-glow);
+  opacity: 0.8;
+}
+
+.field__control {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.field__prefix {
+  position: absolute;
+  left: 12px;
+  color: var(--cream-dim);
+  font-size: 0.95rem;
+  pointer-events: none;
+}
+
+.field__input,
+.field__select {
+  width: 100%;
+  background: var(--night-mid);
+  border: 2px solid var(--night-high);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 11px 12px;
+  border-radius: 2px;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.field__input:has(+ .field__prefix),
+.field--prefixed .field__input {
+  padding-left: 28px;
+}
+
+.field__control:has(.field__prefix) .field__input {
+  padding-left: 26px;
+}
+
+.field__input:focus,
+.field__select:focus {
+  border-color: var(--cyan-glow);
+  background: #16233f;
+}
+
+.field__input::placeholder {
+  color: #5c6c85;
+}
+
+.field__hint {
+  margin: 0;
+  font-size: 0.72rem;
+  color: #7a879c;
+}
+
+.field__error {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--danger);
+}
+
+.field--error .field__input,
+.field--error .field__select {
+  border-color: var(--danger);
+}
+
+/* Number input spinner cleanup for a calmer look */
+.field__input[type='number']::-webkit-inner-spin-button,
+.field__input[type='number']::-webkit-outer-spin-button {
+  opacity: 0.6;
+}

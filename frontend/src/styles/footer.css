@@ -1,0 +1,24 @@
+.footer {
+  background: var(--night-deep);
+  border-top: 2px solid var(--night-high);
+  padding: 28px 0;
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer__brand {
+  font-size: 0.7rem;
+  color: var(--cyan-glow);
+}
+
+.footer__text {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--cream-dim);
+}

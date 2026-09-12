@@ -1,0 +1,27 @@
+.predict-btn {
+  width: 100%;
+  font-family: var(--font-pixel);
+  font-size: 0.85rem;
+  color: var(--night-deep);
+  background: var(--window-warm);
+  border: none;
+  padding: 20px 24px;
+  cursor: pointer;
+  box-shadow: 0 0 0 2px var(--night-deep), 6px 6px 0 0 rgba(0, 0, 0, 0.5);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+}
+
+.predict-btn:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 0 0 0 2px var(--night-deep), 8px 8px 0 0 rgba(0, 0, 0, 0.5);
+}
+
+.predict-btn:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 2px var(--night-deep), 2px 2px 0 0 rgba(0, 0, 0, 0.5);
+}
+
+.predict-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
